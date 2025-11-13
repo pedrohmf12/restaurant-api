@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "knex": "node --import tsx ./node_modules/.bin/knex"
+    "knex": "node --import tsx ./node_modules/.bin/knex",
+    "migrate:make": "npx tsx node_modules/knex/bin/cli.js migrate:make",
+    "migrate:latest": "npx tsx node_modules/knex/bin/cli.js migrate:latest",
+    "migrate:rollback": "npx tsx node_modules/knex/bin/cli.js migrate:rollback"
   },
   "keywords": [],
   "author": "Pedro Muniz",
@@ -19,6 +22,7 @@
   "devDependencies": {
     "@types/express": "^5.0.5",
     "@types/node": "^24.10.0",
+    "ts-node": "^10.9.2",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3"
   }
